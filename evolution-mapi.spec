@@ -1,12 +1,12 @@
 Summary:	Evolution extension for Exchange MAPI
 Summary(pl.UTF-8):	Rozszerzenie Evolution dla Exchange MAPI
 Name:		evolution-mapi
-Version:	3.26.3
+Version:	3.28.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Mail
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-mapi/3.26/%{name}-%{version}.tar.xz
-# Source0-md5:	bf22942ba46ea43e14480d321886c27f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-mapi/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	4a992c4ef2cea63ef480f4cd54b5bc78
 URL:		http://projects.gnome.org/evolution/
 BuildRequires:	cmake >= 3.1
 BuildRequires:	evolution-data-server-devel >= %{version}
@@ -73,5 +73,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/evolution-data-server/camel-providers/libcamelmapi.urls
 %attr(755,root,root) %{_libdir}/evolution-data-server/registry-modules/module-mapi-backend.so
 %attr(755,root,root) %{_libdir}/evolution/modules/module-mapi-configuration.so
-%{_datadir}/appdata/evolution-mapi.metainfo.xml
 %{_datadir}/evolution-data-server/mapi
+%{_datadir}/metainfo/org.gnome.Evolution-mapi.metainfo.xml
