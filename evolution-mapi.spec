@@ -1,23 +1,21 @@
 Summary:	Evolution extension for Exchange MAPI
 Summary(pl.UTF-8):	Rozszerzenie Evolution dla Exchange MAPI
 Name:		evolution-mapi
-Version:	3.28.3
-Release:	3
+Version:	3.32.2
+Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Mail
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-mapi/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	7b01e99bfb343722fa50788c8b76aa44
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-mapi/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	80d2a9f9c51f5f9f8c5fb0ea61d289ce
 URL:		http://projects.gnome.org/evolution/
 BuildRequires:	cmake >= 3.1
 BuildRequires:	evolution-data-server-devel >= %{version}
 BuildRequires:	evolution-devel >= %{version}
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.46
-BuildRequires:	gnome-common
 BuildRequires:	gtk+3-devel >= 3.10
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	intltool >= 0.35.5
-BuildRequires:	libtool
 BuildRequires:	libical-devel
 BuildRequires:	openchange-devel >= 2.3
 BuildRequires:	pkgconfig
@@ -45,15 +43,17 @@ MAPI.
 %setup -q
 
 %build
-%cmake \
-        -DLIBEXEC_INSTALL_DIR=%{_libdir} \
+install -d build
+cd build
+%cmake .. \
+        -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
         -DENABLE_SCHEMAS_COMPILE=OFF
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
