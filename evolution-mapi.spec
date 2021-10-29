@@ -1,12 +1,12 @@
 Summary:	Evolution extension for Exchange MAPI
 Summary(pl.UTF-8):	Rozszerzenie Evolution dla Exchange MAPI
 Name:		evolution-mapi
-Version:	3.42.0
+Version:	3.42.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Mail
 Source0:	https://download.gnome.org/sources/evolution-mapi/3.42/%{name}-%{version}.tar.xz
-# Source0-md5:	9235b8e285b632ccd6ead322bac4ff48
+# Source0-md5:	5da506484c1365dbbc77bafd4a3cadcc
 URL:		https://wiki.gnome.org/Apps/Evolution
 BuildRequires:	cmake >= 3.1
 BuildRequires:	evolution-data-server-devel >= %{version}
